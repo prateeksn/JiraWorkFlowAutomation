@@ -24,7 +24,7 @@ module.exports.updateJiraStatus = (jiraNumber, status_ID, comment_message) => {
 				'user-agent': 'node.js',
 				'Content-Type': 'application/json'
 			},
-			'uri': 'http://jira.ef.com/rest/api/2/issue/' + jiraNumber + '/transitions',
+			'uri': 'http://jira.com/rest/api/2/issue/' + jiraNumber + '/transitions',
 			'method': 'POST',
 			'json': form
 		},
@@ -67,7 +67,7 @@ module.exports.updateAssignee = (jiraNumber) => {
 				'User-Agent': 'node.js',
 				'Content-Type': 'application/json'
 			},
-			'uri': 'http://jira.ef.com/rest/api/2/issue/' + jiraNumber + '/assignee',
+			'uri': 'http://jira.com/rest/api/2/issue/' + jiraNumber + '/assignee',
 			'method': 'PUT',
 			'json': formdata
 		},
@@ -93,7 +93,7 @@ module.exports.getCheckStatus = (sha) => {
 				'X-GitHub-Media-Type': 'application/vnd.github.symmetra-preview+json',
 				'user-agent': 'node.js'
 			},
-			'uri': 'https://api.github.com/repos/ILC-Technology/Salesforce/commits/' + sha + '/status',
+			'uri': 'https://api.github.com/repos/YourRepository/ProjectName/commits/' + sha + '/status',
 			'method': 'GET',
 		},
 			function (err, res, body) {
@@ -136,7 +136,7 @@ module.exports.updateJiraFixversions = (jiraNumber, fixversion) => {
 				'user-agent': 'node.js',
 				'Content-Type': 'application/json'
 			},
-			'uri': 'http://jira.ef.com/rest/api/2/issue/' + jiraNumber,
+			'uri': 'http://jira.com/rest/api/2/issue/' + jiraNumber,
 			'method': 'POST',
 			'json': form
 		},
