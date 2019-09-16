@@ -14,7 +14,7 @@ function getPullRequestDetails(pullRequestId) {
 			'X-GitHub-Media-Type': 'application/vnd.github.symmetra-preview+json',
 			'user-agent': 'node.js'
 		},
-		'uri': 'https://api.github.com/repos/ILC-Technology/Salesforce/pulls/' + pullRequestId,
+		'uri': 'https://api.github.com/repos/YourRepository/ProjectName/pulls/' + pullRequestId,
 		'method': 'GET'
 	}, function (err, res, body) {
 		var jsonData = JSON.parse(body);
@@ -34,7 +34,7 @@ function recursivelyGetCommitList(pullRequest, headSha, commitList) {
 			'X-GitHub-Media-Type': 'application/vnd.github.symmetra-preview+json',
 			'user-agent': 'node.js'
 		},
-		'uri': 'https://api.github.com/repos/ILC-Technology/Salesforce/compare/' + pullRequest.base.sha + '...' + headSha,
+		'uri': 'https://api.github.com/repos/YourRepository/ProjectName/compare/' + pullRequest.base.sha + '...' + headSha,
 		'method': 'GET'
 	}, function (err, res, body) {
 		var jsonData = JSON.parse(body);
